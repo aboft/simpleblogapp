@@ -4,9 +4,10 @@ expressSanitizer = require('express-sanitizer'),
 bodyParser = require('body-parser'),
 mongoose = require('mongoose'),
 app = express()
+require('dotenv').config()
 
 //app config
-mongoose.connect("mongodb://localhost:27017/blog_app", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/blog_app", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended: true}))
