@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(expressSanitizer())
 app.use(methodOverride('_method'))
 
+const port = process.env.port || 3000
 
 //Mongoose model/configuration
 const blogSchema = new mongoose.Schema({
@@ -92,6 +93,6 @@ app.delete('/blogs/:id', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server is running")
 })
