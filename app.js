@@ -4,7 +4,7 @@ expressSanitizer = require('express-sanitizer'),
 bodyParser = require('body-parser'),
 mongoose = require('mongoose'),
 app = express()
-require('dotenv').config()
+// require('dotenv').config()
 
 //app config
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/blog_app", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
