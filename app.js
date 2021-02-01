@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(expressSanitizer())
 app.use(methodOverride('_method'))
 
-const port = process.env.port || 3000
+const port = process.env.port || 3030
 
 //Mongoose model/configuration
 const blogSchema = new mongoose.Schema({
